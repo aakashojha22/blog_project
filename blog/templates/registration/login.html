@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="boxAbout">
+
+{% if form.error %}
+    <h2>Your Username ans Password is incorrect...</h2>
+    {% endif %}
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <input type="submit" name="" value="Login">
+
+</form>
+</div>
+
+
+
+{% endblock %}
